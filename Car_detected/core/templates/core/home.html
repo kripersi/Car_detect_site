@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'core/base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block title %}Главная — Каталог машин{% endblock %}
+
+{% block content %}
+  <section class="photo-section">
+    <div class="photo-box">
+      <p>Фотки (1–5)</p>
+      <p>Можно перелистывать их</p>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="info-card">Знак</div>
+    <div class="info-card">Владелец</div>
+    <div class="info-card">Прошлые владельцы</div>
+    <div class="info-card">Описание машины</div>
+    <div class="info-card">Кто добавил машину на сайт + дата, время и т.д.</div>
+  </section>
+{% endblock %}

@@ -103,3 +103,165 @@ main {
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.25);
 }
+
+/* ======== ФОРМА РЕГИСТРАЦИИ ======== */
+
+.register-container {
+  max-width: 400px;
+  margin: 60px auto;
+  background-color: #6C5F5B; /* Металл */
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  color: #DAC3B3; /* Газетная бумага */
+}
+
+.register-container h2 {
+  text-align: center;
+  color: #CDAB81; /* Крафтовая бумага */
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #DAC3B3;
+}
+
+.form-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #4F4A45; /* Олово */
+  background-color: #DAC3B3; /* Газетная бумага */
+  color: #4F4A45;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #CDAB81;
+  box-shadow: 0 0 5px #CDAB81;
+}
+
+.btn-register {
+  width: 100%;
+  background-color: #CDAB81;
+  color: #4F4A45;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-register:hover {
+  background-color: #DAC3B3;
+  color: #4F4A45;
+}
+
+.error {
+  color: #ffb3b3;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* ======== АККАУНТ ======== */
+
+.account-container {
+  max-width: 500px;
+  margin: 60px auto;
+  background-color: #6C5F5B; /* Металл */
+  color: #DAC3B3; /* Газетная бумага */
+  border-radius: 15px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.account-container h2 {
+  color: #CDAB81; /* Крафтовая бумага */
+  margin-bottom: 20px;
+}
+
+.account-info p {
+  margin: 10px 0;
+}
+
+.logout-btn {
+  display: inline-block;
+  background-color: #CDAB81;
+  color: #4F4A45;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 25px;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #DAC3B3;
+}
+
+/* ======== ФОРМА ВХОДА ======== */
+
+.login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  background-color: var(--metal); /* Металл */
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  color: var(--paper); /* Газетная бумага */
+}
+
+.login-container h2 {
+  text-align: center;
+  color: var(--kraft); /* Крафтовая бумага */
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+/* Стили для form-group, label, input и error уже должны быть применены
+   из секции .register-container, так как они имеют те же классы. */
+
+.btn-login {
+  width: 100%;
+  background-color: var(--kraft);
+  color: var(--tin);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 15px; /* Немного отступа от полей формы */
+}
+
+.btn-login:hover {
+  background-color: var(--paper);
+  color: var(--tin);
+}
+
+.login-footer-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.login-footer-text a {
+  color: var(--kraft); /* Ссылка на регистрацию */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-footer-text a:hover {
+  text-decoration: underline;
+}
