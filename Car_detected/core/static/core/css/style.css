@@ -1,0 +1,105 @@
+/* Цветовая палитра */
+:root {
+  --metal: #6C5F5B;
+  --kraft: #CDAB81;
+  --paper: #DAC3B3;
+  --tin: #4F4A45;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: var(--tin);
+  color: var(--tin);
+}
+
+/* Верхняя панель */
+header {
+  background-color: var(--metal);
+  padding: 10px 20px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  width: 400px;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+  padding: 0 15px;
+  background-color: var(--paper);
+  font-size: 16px;
+}
+
+.search-bar button {
+  background-color: var(--kraft);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--tin);
+  transition: 0.2s;
+}
+
+.search-bar button:hover {
+  background-color: var(--paper);
+}
+
+/* Основной блок */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* Фото блок */
+.photo-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-box {
+  background-color: var(--paper);
+  width: 400px;
+  height: 500px;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--tin);
+  font-size: 18px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Инфо блок справа */
+.info-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info-card {
+  background-color: var(--kraft);
+  padding: 20px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}

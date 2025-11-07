@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Каталог машин</title>
+  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+<body>
+  <header>
+    <div class="search-bar">
+      <input type="text" placeholder="Поиск">
+      <button>добавить</button>
+      <button>зарегистрироваться</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="photo-section">
+      <div class="photo-box">
+        <p>фотки (1–5)</p>
+        <p>можно перелистывать их</p>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <div class="info-card">Знак</div>
+      <div class="info-card">Владелец</div>
+      <div class="info-card">Прошлые владельцы</div>
+      <div class="info-card">Описание машины</div>
+      <div class="info-card">Кто добавил машину на сайт + дата, время и т.д.</div>
+    </div>
+  </main>
+</body>
+</html>
