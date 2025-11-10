@@ -1,0 +1,6 @@
+<h1>Профиль: {{ profile_user.username }}</h1>
+<p><strong>Имя:</strong> {{ profile_user.first_name }} {{ profile_user.last_name }}</p>
+<p><strong>Email:</strong> {{ profile_user.email }}</p>
+{% if profile_user.bio %}
+  <p><strong>Биография:</strong> {{ profile_user.bio }}</p>
+{% endif %}

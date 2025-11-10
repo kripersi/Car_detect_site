@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Добавить автомобиль{% endblock %}
+
+{% block content %}
+<body class="add-car-page">
+  <h2>Добавить автомобиль</h2>
+
+  <form class="add-car-form" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="form-group">
+          {{ form.as_p }}
+      </div>
+
+      <h3>Фотографии (обязательно одна с номерным знаком)</h3>
+      {{ photo_form.as_p }}
+
+      <button type="submit" class="btn-register">Добавить машину</button>
+  </form>
+</body>
+{% endblock %}

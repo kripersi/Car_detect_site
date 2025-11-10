@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout
+from django.shortcuts import render, get_object_or_404
+from .models import CustomUser
 
 
 def register(request):
@@ -24,4 +26,10 @@ def account(request):
 def user_logout(request):
     logout(request)
     return redirect('home')
+
+
+def public_profile(request, username):
+    user = get_object_or_404(CustomUser, username=username)
+    return render(request, 'accounts/public_profile.html', {'profile_user': user})
+
 
