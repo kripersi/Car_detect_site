@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('accounts/', include('accounts.urls')),
     path('add_car/', include('add_car.urls')),
+    path('search/', include('get_car.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

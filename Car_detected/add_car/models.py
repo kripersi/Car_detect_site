@@ -2,7 +2,18 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils import timezone
 
+import os
+from datetime import datetime
+
 User = get_user_model()
+
+
+def car_photo_upload_to(instance, filename):
+    base, ext = os.path.splitext(filename)
+    username = instance.car.added_by.username if instance.car and instance.car.added_by else "anon"
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    new_filename = f"{timestamp}_{username}{ext}"
+    return f"add_car/{new_filename}"
 
 
 class Car(models.Model):
@@ -20,5 +31,5 @@ class Car(models.Model):
 
 class CarPhoto(models.Model):
     car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='photos')
-    image = models.ImageField("Фотография", upload_to='add_car/')
+    image = models.ImageField("Фотография", upload_to=car_photo_upload_to)
     is_number_plate = models.BooleanField("На фото с номерным знаком", default=False)

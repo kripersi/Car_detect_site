@@ -6,6 +6,7 @@
   --tin: #4F4A45;
 }
 
+/* Общие стили */
 * {
   margin: 0;
   padding: 0;
@@ -104,25 +105,50 @@ main {
   box-shadow: 0 0 10px rgba(0,0,0,0.25);
 }
 
-/* ======== ФОРМА РЕГИСТРАЦИИ ======== */
-
-.register-container {
+/* ======== ФОРМА РЕГИСТРАЦИИ И АККАУНТА ======== */
+.register-container,
+.account-container,
+.login-container,
+form.add-car-form {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border-radius: 15px;
+  padding: 30px 40px;
   max-width: 400px;
   margin: 60px auto;
-  background-color: #6C5F5B; /* Металл */
-  padding: 30px 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  color: #DAC3B3; /* Газетная бумага */
+  background-color: #6C5F5B; /* Общий фон */
+  color: #DAC3B3; /* Общий текст */
+}
+
+/* Заголовки внутри контейнеров */
+.register-container h2,
+.account-container h2,
+.login-container h2,
+form.add-car-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 .register-container h2 {
-  text-align: center;
-  color: #CDAB81; /* Крафтовая бумага */
-  margin-bottom: 25px;
-  font-size: 1.8rem;
+  color: #CDAB81;
 }
 
+.account-container h2 {
+  color: #CDAB81;
+}
+
+.login-container h2 {
+  color: var(--kraft);
+}
+
+form.add-car-form h2 {
+  color: var(--kraft);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Общие стили для форм */
 .form-group {
   margin-bottom: 18px;
   display: flex;
@@ -135,31 +161,44 @@ main {
   color: #DAC3B3;
 }
 
-.form-group input {
+.form-group input,
+form textarea {
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #4F4A45; /* Олово */
-  background-color: #DAC3B3; /* Газетная бумага */
+  border: 1px solid #4F4A45;
+  background-color: #DAC3B3;
   color: #4F4A45;
   font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+form textarea:focus {
   outline: none;
   border-color: #CDAB81;
   box-shadow: 0 0 5px #CDAB81;
 }
 
-.btn-register {
+/* Кнопки */
+.btn-register,
+.btn-login,
+.logout-btn,
+.gallery-btn {
   width: 100%;
-  background-color: #CDAB81;
-  color: #4F4A45;
-  border: none;
   padding: 12px;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
+  border: none;
+  display: inline-block;
+}
+
+/* Кнопка регистрации */
+.btn-register {
+  background-color: #CDAB81;
+  color: #4F4A45;
 }
 
 .btn-register:hover {
@@ -167,82 +206,11 @@ main {
   color: #4F4A45;
 }
 
-.error {
-  color: #ffb3b3;
-  font-size: 0.9rem;
-  margin-top: 4px;
-}
-
-/* ======== АККАУНТ ======== */
-
-.account-container {
-  max-width: 500px;
-  margin: 60px auto;
-  background-color: #6C5F5B; /* Металл */
-  color: #DAC3B3; /* Газетная бумага */
-  border-radius: 15px;
-  padding: 30px 40px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  text-align: center;
-}
-
-.account-container h2 {
-  color: #CDAB81; /* Крафтовая бумага */
-  margin-bottom: 20px;
-}
-
-.account-info p {
-  margin: 10px 0;
-}
-
-.logout-btn {
-  display: inline-block;
-  background-color: #CDAB81;
-  color: #4F4A45;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 25px;
-  transition: 0.3s;
-}
-
-.logout-btn:hover {
-  background-color: #DAC3B3;
-}
-
-/* ======== ФОРМА ВХОДА ======== */
-
-.login-container {
-  max-width: 400px;
-  margin: 60px auto;
-  background-color: var(--metal); /* Металл */
-  padding: 30px 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  color: var(--paper); /* Газетная бумага */
-}
-
-.login-container h2 {
-  text-align: center;
-  color: var(--kraft); /* Крафтовая бумага */
-  margin-bottom: 25px;
-  font-size: 1.8rem;
-}
-
-/* Стили для form-group, label, input и error уже должны быть применены
-   из секции .register-container, так как они имеют те же классы. */
-
+/* Кнопка входа */
 .btn-login {
-  width: 100%;
   background-color: var(--kraft);
   color: var(--tin);
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top: 15px; /* Немного отступа от полей формы */
+  margin-top: 15px;
 }
 
 .btn-login:hover {
@@ -250,35 +218,24 @@ main {
   color: var(--tin);
 }
 
-.login-footer-text {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.95rem;
-}
-
-.login-footer-text a {
-  color: var(--kraft); /* Ссылка на регистрацию */
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.login-footer-text a:hover {
-  text-decoration: underline;
-}
-
-/* Стили для биографии */
-form textarea {
-  width: 100%;
-  height: 120px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #4F4A45;
-  background-color: #DAC3B3;
+/* Кнопка выхода */
+.logout-btn {
+  display: inline-block;
+  background-color: #CDAB81;
   color: #4F4A45;
-  font-family: "Segoe UI", sans-serif;
-  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 25px;
+}
+
+.logout-btn:hover {
+  background-color: #DAC3B3;
+}
+
+/* Текст для biography или textarea */
+form textarea {
+  height: 120px;
   resize: vertical;
-  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 form textarea:focus {
@@ -287,24 +244,19 @@ form textarea:focus {
   box-shadow: 0 0 5px #CDAB81;
 }
 
-/* ======== ФОРМА ДОБАВЛЕНИЯ МАШИНЫ — обновлённый стиль ======== */
-
-.add-car-page main {
-  display: block; /* отменяем flex из base.html */
-  padding: 60px 20px;
-  background-color: var(--tin);
-}
-
+/* ======== Форма добавления машины ======== */
 form.add-car-form {
-  max-width: 700px;
-  margin: 0 auto;
   background-color: var(--metal);
   padding: 40px 50px;
   border-radius: 20px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   color: var(--paper);
+  width: 100%; /* Занимает всю доступную ширину */
+  max-width: 750px; /* Максимальная ширина формы */
+  margin: 0 auto; /* Центрируем */
 }
 
+/* Заголовок формы */
 form.add-car-form h2 {
   text-align: center;
   margin-bottom: 25px;
@@ -313,10 +265,12 @@ form.add-car-form h2 {
   color: var(--kraft);
 }
 
+/* Группы полей внутри формы */
 form.add-car-form .form-group {
   margin-bottom: 20px;
 }
 
+/* Метки */
 form.add-car-form label {
   display: block;
   margin-bottom: 6px;
@@ -324,6 +278,7 @@ form.add-car-form label {
   color: var(--paper);
 }
 
+/* Текстовые поля и textarea */
 form.add-car-form input[type="text"],
 form.add-car-form textarea {
   width: 100%;
@@ -336,6 +291,7 @@ form.add-car-form textarea {
   transition: 0.2s ease;
 }
 
+/* Фокус для текстовых полей */
 form.add-car-form input[type="text"]:focus,
 form.add-car-form textarea:focus {
   border-color: var(--kraft);
@@ -343,7 +299,7 @@ form.add-car-form textarea:focus {
   outline: none;
 }
 
-/* Фото и загрузка файлов */
+/* Загрузка файлов */
 form.add-car-form input[type="file"] {
   background-color: var(--paper);
   padding: 8px;
@@ -351,6 +307,7 @@ form.add-car-form input[type="file"] {
   width: 100%;
 }
 
+/* Заголовки разделов */
 form.add-car-form h3 {
   margin-top: 30px;
   margin-bottom: 15px;
@@ -359,7 +316,7 @@ form.add-car-form h3 {
   text-align: center;
 }
 
-/* Кнопка */
+/* Кнопка отправки */
 form.add-car-form .btn-register {
   width: 100%;
   background-color: var(--kraft);
@@ -376,6 +333,98 @@ form.add-car-form .btn-register {
 
 form.add-car-form .btn-register:hover {
   background-color: var(--paper);
-  color: var(--tin);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ======== Предпросмотр фото ======== */
+.image-preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.preview-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid var(--kraft);
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.preview-image:hover {
+  transform: scale(1.05);
+}
+
+/* === Галерея фото === */
+.photo-gallery {
+  width: 400px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.gallery-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  flex-shrink: 0;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Контролы галереи */
+.gallery-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.gallery-btn {
+  background-color: var(--paper);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--tin);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.gallery-btn:hover {
+  background-color: var(--tin);
+  color: var(--kraft);
+}
+
+/* Нет фото */
+.no-photos {
+  color: var(--paper);
+  font-size: 1.2rem;
+  background-color: var(--kraft);
+  padding: 15px 25px;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* ======== Специальные стили для блока добавления машины ======== */
+.add-car-page {
+  padding-top: 20px; /* Уменьшаем отступ сверху */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px; /* Расширяем ширину */
+  margin: 0 auto;
 }
