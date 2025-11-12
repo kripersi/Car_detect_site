@@ -4,19 +4,38 @@
 {% block title %}Мой аккаунт{% endblock %}
 
 {% block content %}
-<div class="account-container">
-  <h2>Привет, {{ user.username }}!</h2>
+<div class="account-page">
+  <div class="account-left">
+    <div class="account-info-card">
+      <h2>{{ user.username }}</h2>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Имя:</strong> {{ user.first_name }}</p>
+      <p><strong>Фамилия:</strong> {{ user.last_name }}</p>
 
-  <div class="account-info">
-    <p><strong>Email:</strong> {{ user.email }}</p>
-    <p><strong>Имя:</strong> {{ user.first_name }}</p>
-    <p><strong>Фамилия:</strong> {{ user.last_name }}</p>
+      <form action="{% url 'logout' %}" method="post" class="logout-form">
+        {% csrf_token %}
+        <button type="submit" class="logout-btn">Выйти</button>
+      </form>
+    </div>
   </div>
 
-  {# Форма для выхода из аккаунта. Важно использовать method="post" и {% csrf_token %} #}
-  <form action="{% url 'logout' %}" method="post">
-    {% csrf_token %} {# Защита от CSRF-атак #}
-    <button type="submit" class="logout-btn">Выйти</button>
-  </form>
+  <div class="account-right">
+    <h2>Мои машины</h2>
+    {% if cars %}
+      <div class="user-cars">
+        {% for car in cars %}
+          <div class="car-card">
+            <h3>{{ car.name }}</h3>
+            <p class="car-number"><strong>Номер:</strong> {{ car.number_plate }}</p>
+            <a href="{% url 'car_detail' car.id %}" class="btn-action">Подробнее</a>
+            <a href="{% url 'edit_car' car.id %}" class="btn-action">Изменить</a>
+            <a href="{% url 'delete_car' car.id %}" class="btn-delete">Удалить</a>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="no-cars">Вы ещё не добавили ни одной машины.</p>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}

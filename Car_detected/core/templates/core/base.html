@@ -1,48 +1,81 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru">
+<!--tg: @Marpexiz-->
+<!--https://github.com/kripersi-->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% block title %}Каталог машин{% endblock %}</title>
-  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{% block title %}Каталог машин{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
-  <header>
+<div id="particles-js"></div>
+
+<header>
     <div class="search-bar">
-      <form method="GET" action="{% url 'search_car' %}" class="search-form" style="display:flex; align-items:center; gap:8px;">
-          <input type="text" name="q" placeholder="Поиск..." style="padding:8px 12px; border-radius:4px; border:1px solid #4F4A45;"/>
-          <button type="submit" style="padding:8px 12px; border:none; border-radius:4px; background-color:var(--kraft); cursor:pointer;">Поиск</button>
-      </form>
+        <a href="{% url 'home' %}" class="btn-home" title="Домой">
+            <i class="fa-solid fa-house"></i>
+        </a>
+        <form method="GET" action="{% url 'search_car' %}" class="search-form">
+            <input type="text" name="q" placeholder="Поиск...">
+            <button type="submit" class="btn-header">Поиск</button>
+        </form>
 
-      {% if user.is_authenticated %}
-        <a href="{% url 'account' %}">
-          <button>Аккаунт</button>
-        </a>
-        <a href="{% url 'add_car' %}">
-          <button>Добавить</button>
-        </a>
-
-      {% else %}
-        {# Добавляем кнопку "Войти" здесь #}
-        <a href="{% url 'login' %}">
-          <button>Войти</button>
-        </a>
-        <a href="{% url 'register' %}">
-          <button>Зарегистрироваться</button>
-        </a>
-      {% endif %}
+        <nav class="header-buttons">
+            {% if user.is_authenticated %}
+            <a href="{% url 'account' %}" class="btn-header">Аккаунт</a>
+            <a href="{% url 'add_car' %}" class="btn-header">Добавить</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="btn-header">Войти</a>
+            <a href="{% url 'register' %}" class="btn-header">Зарегистрироваться</a>
+            {% endif %}
+        </nav>
     </div>
-  </header>
+</header>
 
-  <main>
+<main>
     {% block content %}
     {% endblock %}
-  </main>
+</main>
 
-  <footer>
-    <p>© 2025 Каталог машин</p>
-  </footer>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#CDAB81" },
+        "shape": { "type": "polygon" },
+        "opacity": { "value": 0.6 },
+        "size": { "value": 3, "random": true },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#DAC3B3",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 1,
+          "direction": "none",
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        },
+        "modes": {
+          "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+</script>
 </body>
 </html>

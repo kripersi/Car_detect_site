@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Редактировать автомобиль{% endblock %}
+
+{% block content %}
+<div class="add-car-page">
+    <h2>Редактировать автомобиль</h2>
+
+    <form class="add-car-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+
+        <button type="submit" class="btn-register">Сохранить изменения</button>
+    </form>
+</div>
+
+<script src="{% static 'core/js/preview.js' %}"></script>
+{% endblock %}

@@ -1,21 +1,33 @@
-{% extends 'core/base.html' %}
-{% load static %}
+{% extends "core/base.html" %}
 
-{% block title %}Главная — Каталог машин{% endblock %}
+{% block title %}Главная - Каталог машин{% endblock %}
 
 {% block content %}
-  <section class="photo-section">
-    <div class="photo-box">
-      <p>Фотки (1–5)</p>
-      <p>Можно перелистывать их</p>
-    </div>
-  </section>
+<section class="home-section">
+    <h1>Добро пожаловать в каталог машин</h1>
 
-  <section class="info-section">
-    <div class="info-card">Знак</div>
-    <div class="info-card">Владелец</div>
-    <div class="info-card">Прошлые владельцы</div>
-    <div class="info-card">Описание машины</div>
-    <div class="info-card">Кто добавил машину на сайт + дата, время и т.д.</div>
-  </section>
+    <div class="info-block">
+        <h2>О сайте</h2>
+        <p>Этот сайт предназначен для поиска, добавления и просмотра информации о различных автомобилях. Всё управление
+            происходит через удобный интерфейс.</p>
+    </div>
+
+    <div class="info-block">
+        <h2>Как пользоваться</h2>
+        <ul>
+            <li>Используйте строку поиска в верхней части сайта, чтобы найти интересующие вас автомобили по номерному знаку.</li>
+            <li>Зарегистрированные пользователи могут добавлять новые машины.</li>
+            <li>Для входа или регистрации используйте соответствующие кнопки в верхнем меню.</li>
+        </ul>
+    </div>
+
+    <div class="info-block contact-info">
+        <h2>Контактная информация</h2>
+        <p>Если у вас возникнут вопросы или предложения, свяжитесь с нами:<br>
+            <strong>github:</strong> <a href="https://github.com/kripersi">kripersi</a><br>
+            <strong>Telegram:</strong> <a href="https://t.me/Marpexiz">Marpexiz</a>
+        </p>
+    </div>
+</section>
+
 {% endblock %}

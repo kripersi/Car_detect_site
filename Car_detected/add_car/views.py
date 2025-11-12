@@ -4,6 +4,7 @@ from .forms import CarForm, CarPhotoUploadForm
 from .models import Car, CarPhoto
 from django.contrib import messages
 
+
 @login_required
 def add_car(request):
     if request.method == 'POST':

@@ -5,40 +5,42 @@
 
 {% block content %}
 <section class="photo-section">
-  <h2 class="photo-title">Фотографии машины</h2>
 
-  {% if car.photos.all %}
-  <div class="photo-card">
-    <div class="photo-gallery">
-      <div class="photo-track">
-        {% for photo in car.photos.all %}
-          <img src="{{ photo.image.url }}" alt="Фото машины" class="gallery-photo">
-        {% endfor %}
-      </div>
+    {% if car.photos.all %}
+    <div class="photo-card">
+        <div class="photo-gallery">
+            <div class="photo-track">
+                {% for photo in car.photos.all %}
+                <img src="{{ photo.image.url }}" alt="Фото машины" class="gallery-photo">
+                {% endfor %}
+            </div>
 
-      <div class="gallery-controls">
-        <button class="gallery-btn prev-btn">‹</button>
-        <button class="gallery-btn next-btn">›</button>
-      </div>
+            <div class="gallery-controls">
+                <button class="gallery-btn prev-btn">‹</button>
+                <button class="gallery-btn next-btn">›</button>
+            </div>
+        </div>
     </div>
-  </div>
-  {% else %}
+    {% else %}
     <p class="no-photos">Фотографии отсутствуют.</p>
-  {% endif %}
+    {% endif %}
 </section>
 
 
-  <section class="info-section">
+<section class="info-section">
     <div class="info-card"><strong>Знак:</strong> {{ car.number_plate }}</div>
     <div class="info-card"><strong>Страна:</strong> {{ car.region }}</div>
     <div class="info-card"><strong>Владелец:</strong> {{ car.owner }}</div>
     <div class="info-card"><strong>Прошлые владельцы:</strong> {{ car.previous_owners|default:"—" }}</div>
     <div class="info-card"><strong>Описание машины:</strong> {{ car.description|default:"—" }}</div>
     <div class="info-card">
-      <strong>Добавил:</strong> {{ car.added_by.username }}<br>
-      <strong>Дата:</strong> {{ car.added_at|date:"d.m.Y H:i" }}
+        <strong>Добавил:</strong>
+        <a href="{% url 'public_profile' car.added_by.username %}" class="account-link">
+            {{ car.added_by.username }}
+        </a><br>
+        <strong>Дата:</strong> {{ car.added_at|date:"d.m.Y H:i" }}
     </div>
-  </section>
+</section>
 
-  <script src="{% static 'core/js/gallery.js' %}"></script>
+<script src="{% static 'core/js/gallery.js' %}"></script>
 {% endblock %}

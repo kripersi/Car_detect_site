@@ -57,6 +57,43 @@ header {
   background-color: var(--paper);
 }
 
+.btn-header {
+  background-color: var(--kraft);
+  color: var(--tin);
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.btn-header:hover {
+  background-color: var(--paper);
+  color: var(--tin);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Кнопка Домой */
+.btn-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--kraft);
+  color: var(--tin);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn-home:hover {
+  background-color: var(--paper);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
 /* Основной блок */
 main {
   display: flex;
@@ -105,7 +142,7 @@ main {
   box-shadow: 0 0 10px rgba(0,0,0,0.25);
 }
 
-/* ======== ФОРМА РЕГИСТРАЦИИ И АККАУНТА ======== */
+/* Форма регистрации*/
 .register-container,
 .account-container,
 .login-container,
@@ -244,7 +281,16 @@ form textarea:focus {
   box-shadow: 0 0 5px #CDAB81;
 }
 
-/* ======== Форма добавления машины ======== */
+.car-card p,
+.car-card span,
+.info-card p,
+form textarea {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Форма добавления машиныь*/
 form.add-car-form {
   background-color: var(--metal);
   padding: 40px 50px;
@@ -336,7 +382,7 @@ form.add-car-form .btn-register:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* ======== Предпросмотр фото ======== */
+/* Предпросмотр фото */
 .image-preview-container {
   display: flex;
   flex-wrap: wrap;
@@ -358,7 +404,7 @@ form.add-car-form .btn-register:hover {
   transform: scale(1.05);
 }
 
-/* === Галерея фото === */
+/* Галерея фото */
 .photo-gallery {
   width: 400px;
   overflow: hidden;
@@ -419,12 +465,268 @@ form.add-car-form .btn-register:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
-/* ======== Специальные стили для блока добавления машины ======== */
+/* Специальные стили для блока добавления машины */
 .add-car-page {
-  padding-top: 20px; /* Уменьшаем отступ сверху */
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 800px; /* Расширяем ширину */
+  max-width: 800px;
   margin: 0 auto;
 }
+
+.add-car-page h2 {
+  color: var(--kraft);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Главная */
+.home-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.home-section h1 {
+  text-align: center;
+  color: var(--kraft);
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* Блоки с информацией */
+.info-block {
+  background-color: var(--metal);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-bottom: 40px;
+}
+
+.info-block h2 {
+  color: #CDAB81;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.info-block p,
+.info-block ul {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #DAC3B3;
+}
+
+.info-block ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Стиль для ссылок внутри блока contact-info */
+.contact-info a {
+  color: var(--kraft);
+  transition: color 0.2s;
+}
+
+/* При наведении на ссылки */
+.contact-info a:hover {
+  color: var(--paper);
+}
+
+/* Ссылки на юзеров */
+.account-link {
+  color: var(--tin);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.account-link:hover {
+  color: var(--metal);
+  text-decoration: underline;
+}
+
+/* Фон с партиклами */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--tin);
+}
+
+/* Страница аккаунта */
+.account-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.account-left,
+.account-right {
+  background-color: var(--metal);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  color: var(--paper);
+}
+
+.account-left {
+  flex: 1;
+  max-width: 350px;
+}
+
+.account-right {
+  flex: 2;
+  min-width: 400px;
+}
+
+.account-info-card h2 {
+  color: var(--kraft);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.car-number {
+  color: var(--tin);
+  font-weight: bold;
+}
+
+.account-info-card p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--paper);
+}
+
+.logout-form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logout-btn {
+  background-color: var(--kraft);
+  color: var(--tin);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: var(--paper);
+  color: var(--tin);
+}
+
+/* Машины пользователя */
+.user-cars {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.car-card {
+  background-color: var(--kraft);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: cen
+
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.delete-form {
+  width: 100%;
+}
+
+.btn-cancel,
+.btn-delete {
+  flex: 1;
+  padding: 6px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+/* Кнопка отмены — нейтральная */
+.btn-cancel {
+  background-color: var(--kraft);
+  color: var(--tin);
+}
+
+.btn-cancel:hover {
+  background-color: var(--paper);
+}
+
+/* Кнопка удаления — красная */
+.btn-delete {
+  background-color: #E74C3C;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #C0392B;
+}
+
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn-action {
+  display: inline-block;
+  padding: 5px 6px;
+  border-radius: 8px;
+  background-color: var(--paper);
+  color: var(--tin);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn-action:hover {
+  background-color: var(--kraft);
+  color: var(--tin);
+}
+
+.search-results {
+  display: block;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: var(--metal);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Заголовок */
+.search-results h2 {
+  font-size: 2rem;
+  color: var(--kraft);
+  margin-bottom: 20px;
+}
+

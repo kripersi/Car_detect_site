@@ -1,12 +1,14 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-<h2>Результаты поиска</h2>
-{% if query %}
-    {% if not_found %}
-        <p>Машина с номером "{{ query }}" не найдена.</p>
-    {% else %}
-        <p>Введите номер для поиска.</p>
-    {% endif %}
-{% endif %}
+<div class="search-results" style="color: var(--paper);">
+  <h2>Результаты поиска</h2>
+  {% if query %}
+      {% if not_found %}
+          <p>Машина с номером "{{ query }}" не найдена.</p>
+      {% else %}
+          <p>Введите номер для поиска.</p>
+      {% endif %}
+  {% endif %}
+</div>
 {% endblock %}
