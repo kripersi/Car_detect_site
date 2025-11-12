@@ -14,5 +14,4 @@ class CarPhotoUploadForm(forms.Form):
     image3 = forms.ImageField(label='Фотография 3', required=False)
     image4 = forms.ImageField(label='Фотография 4', required=False)
     image5 = forms.ImageField(label='Фотография 5', required=False)
-    is_number_plate1 = forms.BooleanField(label='На фото с номерным знаком', required=False)
 

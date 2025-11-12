@@ -5,6 +5,7 @@
 
 {% block content %}
 <div class="add-car-page">
+
     <h2>Добавить автомобиль</h2>
 
     <form class="add-car-form" method="POST" enctype="multipart/form-data">
@@ -22,4 +23,13 @@
 </div>
 
 <script src="{% static 'core/js/preview.js' %}"></script>
+
+{% if messages %}
+<script>
+  {% for message in messages %}
+    alert("{{ message|escapejs }}");
+  {% endfor %}
+</script>
+{% endif %}
+
 {% endblock %}
