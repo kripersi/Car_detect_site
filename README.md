@@ -23,11 +23,11 @@
 ---
 
 ## 📷 Фото
-[Скриншот проекта](https://github.com/kripersi/Car_detect_site/blob/main/screenshots/main.png)
-[Скриншот проекта](https://github.com/kripersi/Car_detect_site/blob/main/screenshots/photo.png")
-[Скриншот проекта](https://github.com/kripersi/Car_detect_site/blob/main/screenshots/photo2.png")
-[Скриншот проекта](https://github.com/kripersi/Car_detect_site/blob/main/screenshots/photo3.png")
-[Скриншот проекта](https://github.com/kripersi/Car_detect_site/blob/main/screenshots/photo4.png")
+![Скриншот проекта](https://github.com/kripersi/Car_detect_site/blob/main/screenshots/main.png)
+![Скриншот проекта](https://github.com/kripersi/Car_detect_site/blob/main/screenshots/photo.png")
+![Скриншот проекта](https://github.com/kripersi/Car_detect_site/blob/main/screenshots/photo2.png")
+![Скриншот проекта](https://github.com/kripersi/Car_detect_site/blob/main/screenshots/photo3.png")
+![Скриншот проекта](https://github.com/kripersi/Car_detect_site/blob/main/screenshots/photo4.png")
 
 ## 🔧 Функциональность
 
